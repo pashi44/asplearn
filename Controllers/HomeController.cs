@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+
+
 using firstone.Models;
 
 namespace firstone.Controllers;
@@ -7,20 +9,22 @@ namespace firstone.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
     }
 
+
     public IActionResult Index()
     {
 
 
-        ViewData["indexMessage"] = "cosmld";
-        //view method creates  viewResult object  implements IAction result interface
-
-        return View();
+        ViewData["indexMessage"] = "cosasdasdasdmld";
+        //view method creates  viewResult object 
+        //  implements IAction result interface
+//viewreult implemets iactioninterfcae,
+// actionresult abstarct class
+        return View();  
     }
 
 
@@ -45,6 +49,7 @@ return  View(data);
 
     public IActionResult About()
     {
+
 
 
         return View();
