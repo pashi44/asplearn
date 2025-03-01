@@ -11,8 +11,15 @@ public IActionResult ManualView(){
     //  the models are created  here and returned view viewData or result
 
 
-var  itemone = new ManModelOne(){Id =   256, Name = "pashi"};
-    return  View(itemone);
+var  itemone = new ManModelOne();
+
+
+itemone.Id  =  79;
+            itemone.Name = "pashi";
+
+
+            // {Id =   256, Name = "pashi"};
+            return View(itemone);
 
 }
 
@@ -24,7 +31,6 @@ return View(itemtwo);
 
 
 }
-
 
 }
 
