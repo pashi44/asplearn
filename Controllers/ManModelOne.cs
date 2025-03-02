@@ -23,9 +23,11 @@ itemone.Id  =  79;
 
 }
 
+
+
 public  ViewResult todo(){
 
-var   itemtwo = new ManModelOne(){Name = "mouni"};
+var   itemtwo = new ManModelOne(){Name = null};
 
 return View(itemtwo);
 

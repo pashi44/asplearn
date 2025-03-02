@@ -7,8 +7,27 @@ ViewData["Title"] = "about";
 }
 
 
+
 <div> 
 
-<p> @ViewData["Title"] </p>
+ @ViewData["Title"] 
+
+<ul>@{
+    
+
+        for (var i = 0; i < 10; i++)
+   { <li> @ViewData["Title"]
+        </li>
+    
+    }}
+    
+
+
+
+</ul>
+
+
 
 </div>
+
+

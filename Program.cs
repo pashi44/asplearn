@@ -32,7 +32,6 @@ var app = builder.Build(); //  build the instance and call the server
 if (!app.Environment.IsDevelopment()) //if env  is production 
 {
 
-    app.UseWelcomePage("/");//manual
     app.UseExceptionHandler("/Home/Error"); // this error pipeline  when there is 
 
     //incmming request but trigger error page whike outgoing
@@ -58,7 +57,9 @@ app.UseAuthorization();
 app.MapStaticAssets();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=ManualModelOne}/{action=ManualView}/{id?}")
+
+
     .WithStaticAssets();
 
 
