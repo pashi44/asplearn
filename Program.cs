@@ -1,7 +1,12 @@
 
+using firstone.DBdata;
+using Pomelo.EntityFrameworkCore.MySql;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args); 
 //  instance  of Iwebhost  ; contain kerstel server or iis
-
+var connString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 //manual additon of MVC from  aspcore.All
 builder.Services.AddMvcCore(options =>
@@ -17,6 +22,9 @@ builder.Services.AddMvcCore(options =>
 // Add services to the container
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationDbContent>(options => options.UseMySql
+
+(connString,ServerVersion.AutoDetect(connString)));
 
 var app = builder.Build(); //  build the instance and call the server 
 
@@ -54,13 +62,12 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapStaticAssets();
+app.UseStaticFiles();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ManualModelOne}/{action=ManualView}/{id?}")
+    pattern: "{controller=ManualModelOne}/{action=ManualView}/{id?}");
 
 
-    .WithStaticAssets();
 
 
 app.Run();
