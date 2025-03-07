@@ -1,38 +1,38 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
+using System;   
+using  firstone.Models;
 
 namespace  firstone.DBdata{
 
 
-public class Employees{
-    [Key]
-    public int Id{get;set;}
-    public String  Code {get;set;}=null!;
-    [Required]
-    public String FirstName {get;set;}=  null!;
-    [Required]
-
-    public String LastName {get;set;}=  null!;
-        public String Gender {get;set;}=  null!;
-    [Required]
-
-            public String Email {get;set;}=  null!;
-                public String Phone {get;set;}=  null!;
-                public DateTime JoinDate {get;set;}
-                public String JobTitle {get;set;} =  null!;
-
-
-
-t
-}
 public class ApplicationDbContent :DbContext{
-    public  ApplicationDbContent(DbContextOptions<ApplicationDbContent> options): base(options){}
+    public  ApplicationDbContent(DbContextOptions<ApplicationDbContent> options)
+    : base(options){}
 
     public DbSet<Employees> employees{get;set;}
 
 
+protected  override     void  OnModelCreating(ModelBuilder  modelBuilder) {
+
+modelBuilder.Entity<Employees>().HasData( 
+    new Employees {
+
+Id =1,
+ Code  = "coder",
+  FirstName= "prashanth",
+LastName= "Nuthula", 
+Gender = "Male",
+Email = "pashierddi@gmail.com",
+Phone = "816 203 9740",
+JobTitle ="Unemployed"
+
+}
+
+);
+}
+
 }
 
 
-}
+}    

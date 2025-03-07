@@ -1,0 +1,12 @@
+@model List<Employees>
+@{
+ViewData["Title"] = "Application DB view";
+}
+<div> 
+<ul>
+@foreach(var obj  in Model){
+            <li>@obj.Phone </li>
+            @* <li>@obj.Email </li> *@
+}
+</ul>
+</div>

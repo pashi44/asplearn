@@ -65,7 +65,7 @@ app.UseAuthorization();
 app.UseStaticFiles();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ManualModelOne}/{action=ManualView}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
 

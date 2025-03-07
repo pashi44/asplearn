@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using firstone.DBdata;
 
@@ -10,9 +11,11 @@ using firstone.DBdata;
 namespace firstone.Migrations
 {
     [DbContext(typeof(ApplicationDbContent))]
-    partial class ApplicationDbContentModelSnapshot : ModelSnapshot
+    [Migration("20250307001806_InitailMigration")]
+    partial class InitailMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,7 +74,7 @@ namespace firstone.Migrations
                             Gender = "Male",
                             JobTitle = "Unemployed",
                             LastName = "Nuthula",
-                            Phone = "816 203 9740"
+                            Phone = "8916 203 9740"
                         });
                 });
 #pragma warning restore 612, 618
