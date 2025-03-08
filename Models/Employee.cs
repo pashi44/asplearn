@@ -26,20 +26,4 @@ public class Employees
 
 }
 
-public class Corona{
-[Key]
-public int Country_id{get; set;} 
-public string    State {get;set;}=  null!;
-public string Country { get; set; } = null!;
-
-public double  Lat {get;  set;}
-
-public double  Longi {get;  set;}
-
-
-
-    }
-
-
-
 }

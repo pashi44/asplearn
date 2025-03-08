@@ -17,7 +17,7 @@ protected  override     void  OnModelCreating(ModelBuilder  modelBuilder) {
 
 modelBuilder.Entity<Employees>().HasData( 
     new Employees {
-
+// 
 Id =1,
  Code  = "coder",
   FirstName= "prashanth",
@@ -26,13 +26,16 @@ Gender = "Male",
 Email = "pashierddi@gmail.com",
 Phone = "816 203 9740",
 JobTitle ="Unemployed"
-
+// 
 }
-
+// 
 );
-}
+
+
 
 }
 
+}
+    //https://www.google.com/books/edition/Programming_ASP_NET_Core/5LdZDwAAQBAJ?hl=en&gbpv=1&pg=PT8&printsec=frontcover
 
-}    
+}

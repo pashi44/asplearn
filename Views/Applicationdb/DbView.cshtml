@@ -2,11 +2,45 @@
 @{
 ViewData["Title"] = "Application DB view";
 }
-<div> 
-<ul>
-@foreach(var obj  in Model){
-            <li>@obj.Phone </li>
-            @* <li>@obj.Email </li> *@
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+    <table class="table  table-bordered table-stripped">
+<th>
+<tr>
+<td> Id</td>
+<td>    Code</td>
+<td> FirstName</td>
+<td>LastName</td>
+<td>Email</td>
+<td>Phone</td>
+<td>JobTitle</td>
+</tr>
+</th>
+@foreach(var obj in  Model){
+<tr>
+<td>
+@obj.Id
+</td>
+
+                <td>
+                    @obj.Code
+                </td>
+<td>
+    @obj.FirstName
+</td>
+                <td>
+                    @obj.LastName
+                </td>
+            
+                <td>
+                    @obj.Email
+                </td>
+                <td>
+                    @obj.Phone
+                </td>
+                <td>
+                    @obj.JobTitle
+                </td>
+</tr>
 }
-</ul>
+</table>
 </div>
